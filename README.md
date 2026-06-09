@@ -1,5 +1,7 @@
 # Building a Voice AI App with Retell AI + Rails
 
+<img width="870" height="632" alt="image" src="https://github.com/user-attachments/assets/f9206618-54eb-49c2-9c28-049092419f76" />
+
 This tutorial walks you through **exactly how this app works**, following the path of a real user interaction from the moment they click "Start Call" to the moment their transcript is saved in the database.
 
 ---
