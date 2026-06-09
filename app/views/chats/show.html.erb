@@ -1,0 +1,22 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @chat %>
+
+<div>
+  <% @chat.messages.each do |msg| %>
+    <div><%= msg.content %></div>
+  <% end %>
+</div>
+
+<%= simple_form_for [@chat, @message] do |f| %>
+  <%= f.input :content %>
+  <%= f.submit %>
+<% end %>
+
+
+<div>
+  <%= link_to "Edit this chat", edit_chat_path(@chat) %> |
+  <%= link_to "Back to chats", chats_path %>
+
+  <%= button_to "Destroy this chat", @chat, method: :delete %>
+</div>
