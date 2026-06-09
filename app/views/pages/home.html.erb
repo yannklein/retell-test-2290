@@ -1,2 +1,43 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="container py-5" data-controller="voice">
+  <div class="row justify-content-center">
+    <div class="col-lg-7">
+
+      <h1 class="mb-1">Voice Assistant</h1>
+      <p class="text-muted mb-4">Click <strong>Start Call</strong> and speak — the AI will respond in real time.</p>
+
+      <%# Controls %>
+      <div class="d-flex align-items-center gap-2 mb-4">
+        <button class="btn btn-success"
+                data-voice-target="startBtn"
+                data-action="click->voice#startCall">
+          Start Call
+        </button>
+        <button class="btn btn-danger"
+                data-voice-target="stopBtn"
+                data-action="click->voice#stopCall"
+                disabled>
+          Stop Call
+        </button>
+        <span class="badge bg-secondary ms-2" data-voice-target="statusBadge">Idle</span>
+      </div>
+
+      <%# Transcript panel %>
+      <div class="card">
+        <div class="card-header d-flex justify-content-between align-items-center">
+          <span class="fw-semibold">Live Transcript</span>
+        </div>
+        <div class="card-body"
+             data-voice-target="transcriptPanel"
+             style="min-height: 280px; max-height: 420px; overflow-y: auto; font-size: 0.95rem;">
+          <p class="text-muted fst-italic">Transcript will appear here once the call starts…</p>
+        </div>
+      </div>
+
+      <%# Past conversations link %>
+      <div class="mt-3 text-end">
+        <%= link_to "View past conversations →", chats_path, class: "text-decoration-none text-muted small" %>
+      </div>
+
+    </div>
+  </div>
+</div>
